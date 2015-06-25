@@ -14,7 +14,7 @@ import spock.lang.Specification
  * See the API for {@link grails.test.mixin.support.GrailsUnitTestMixin} for usage instructions
  */
 @TestFor(DrugEventController)
-@TestMixin(ControllerUnitTestMixin)
+@TestMixin([GrailsUnitTestMixin, ControllerUnitTestMixin])
 
 @Mock([DrugService])
 class DrugEventControllerSpec extends Specification {
@@ -45,16 +45,18 @@ class DrugEventControllerSpec extends Specification {
 				array.put("links", new ArrayList().add(new Link()))	
 				return array as JSON
 			}
-			
 			controller.drugService = mockDrugService.createMock()
-		when:"test when graph method is call"
 			
-			request.method = 'GET'
-			request.contentType = "application/json"
-			response.format = 'json'
-			def json = controller.graph()
-		then:
-			assertTrue response.status == 200
-			assertNotNull json
+		when:
+        request.method = 'GET'
+        response.format = 'json'
+        controller.graph()
+
+        then:
+        response.status == 200
+//        with(resp.data) {
+//            payload == "Something really important: Get a hair cut"
+//        }
+
 	}
 }

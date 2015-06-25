@@ -2,23 +2,34 @@ var width = 960,
 height = 650;
 
 var force = d3.layout.force()
-.size([width, height])
-.charge(-400)
-.linkDistance(30)
-.on("tick", tick);
+			.size([width, height])
+			.charge(-400)
+			.linkDistance(30)
+			.on("tick", tick);
 
 var drag = force.drag()
-.on("dragstart", dragstart);
+			.on("dragstart", dragstart);
 
 var svg = d3.select("#graph").append("svg")
-.attr("width", width)
-.attr("height", height);
+			.attr("width", width)
+			.attr("height", height);
 
 var link = svg.selectAll(".link"),
 node = svg.selectAll(".node");
+var d = new Date();
 
+var month = d.getMonth()+1;
+var day = d.getDate();
 
-d3.json("./drugEvent/graph.json", function(error, graph) {
+var to = d.getFullYear() +
+    (month<10 ? '0' : '') + month +
+    (day<10 ? '0' : '') + day;
+
+var from = (d.getFullYear()-1)+
+(month<10 ? '0' : '') + month +
+(day<10 ? '0' : '') + day;
+
+d3.json("./drugEvent/graph.json?from="+from+"&to="+to, function(error, graph) {
 	if (error) throw error;
 
 	force

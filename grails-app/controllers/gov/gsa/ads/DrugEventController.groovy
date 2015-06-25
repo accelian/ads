@@ -8,7 +8,7 @@ import grails.converters.JSON
  * @author Matt
  *
  */
-class DrugEventController {
+class DrugEventController  {
 	def drugService
 	/**
 	 * Set up method.  Nothing needed at this time
@@ -19,10 +19,12 @@ class DrugEventController {
 	}
 	/**
 	 * Called by D3 force graph on page load to get the data for request
+	 * @param from from date (yyyyMMdd) as String
+	 * @param to to date (yyyyMMdd) as String
 	 * @return String JSON string array of links and nodes for graph
 	 */
 	def graph() {
-		def events = drugService.getDrugEventsForDateRange("20140101", "20150619", 100) //yyyyMMdd
+		def events = drugService.getDrugEventsForDateRange(params.from, params.to, 100) //yyyyMMdd
 		def graph = drugService.convertEventsToNodesLinksArray(events)
 	
 		render graph as JSON
