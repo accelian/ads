@@ -7,7 +7,7 @@ class UrlMappings {
             }
         }
 
-        "/"(view:"/index")
+        "/"(controller:"drugEvent", action:"index")
         "500"(view:'/error')
 	}
 }

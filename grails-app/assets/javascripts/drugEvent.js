@@ -18,9 +18,7 @@ var link = svg.selectAll(".link"),
 node = svg.selectAll(".node");
 
 
-
-
-d3.json("graph.json", function(error, graph) {
+d3.json("./drugEvent/graph.json", function(error, graph) {
 	if (error) throw error;
 
 	force
