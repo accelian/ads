@@ -10,7 +10,7 @@ var force = d3.layout.force()
 var drag = force.drag()
 .on("dragstart", dragstart);
 
-var svg = d3.select("body").append("svg")
+var svg = d3.select("#graph").append("svg")
 .attr("width", width)
 .attr("height", height);
 
@@ -18,9 +18,7 @@ var link = svg.selectAll(".link"),
 node = svg.selectAll(".node");
 
 
-
-
-d3.json("graph.json", function(error, graph) {
+d3.json("./drugEvent/graph.json", function(error, graph) {
 	if (error) throw error;
 
 	force

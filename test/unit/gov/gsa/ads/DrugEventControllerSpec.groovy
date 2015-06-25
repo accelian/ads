@@ -28,29 +28,33 @@ class DrugEventControllerSpec extends Specification {
 
     void "test index"() {
 		when:
-			def response = controller.index()
+			controller.index()
 		then:
-			assertNull response
+			response.status == 200
     }
-// Grails JSON converter causing problems in unit test.
-	//TODO get this working	
-//	void "test graph"() {
-//		given:
-//			mockDrugService = mockFor(DrugService)
-//			mockDrugService.demand.getDrugEventsForDateRange("", "", 1) {-> 
-//				return "" 
-//			}
-//			mockDrugService.demand.convertEventsToNodesLinksArray(new ArrayList()) {->
-//				def array = [:]
-//				array.put("nodes", new ArrayList().add(new Node()))
-//				array.put("links", new ArrayList().add(new Link()))	
-//				return array as JSON
-//			}
-//			controller.drugService = mockDrugService.createMock()
-//		when:
-//			def response = controller.graph()
-//		then:
-//			assertNotNull response
-//			println response
-//	}
+
+	void "test graph json request"() {
+		given:
+			mockDrugService = mockFor(DrugService)
+			mockDrugService.demand.getDrugEventsForDateRange("", "", 1) {-> 
+				return "" 
+			}
+			mockDrugService.demand.convertEventsToNodesLinksArray(new ArrayList()) {->
+				def array = [:]
+				array.put("nodes", new ArrayList().add(new Node()))
+				array.put("links", new ArrayList().add(new Link()))	
+				return array as JSON
+			}
+			
+			controller.drugService = mockDrugService.createMock()
+		when:"test when graph method is call"
+			
+			request.method = 'GET'
+			request.contentType = "application/json"
+			response.format = 'json'
+			def json = controller.graph()
+		then:
+			assertTrue response.status == 200
+			assertNotNull json
+	}
 }

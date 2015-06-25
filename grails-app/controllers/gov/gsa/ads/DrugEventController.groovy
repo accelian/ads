@@ -25,6 +25,6 @@ class DrugEventController {
 		def events = drugService.getDrugEventsForDateRange("20140101", "20150619", 100) //yyyyMMdd
 		def graph = drugService.convertEventsToNodesLinksArray(events)
 	
-		new JSON(graph)
+		render graph as JSON
 	}
 }
