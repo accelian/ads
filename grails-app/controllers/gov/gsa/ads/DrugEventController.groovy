@@ -15,9 +15,6 @@ class DrugEventController {
 	 * 
 	 */
     def index() { 
-		println "DRUGEVENT CONTROLLER INDEX() called..."
-		
-		return "index"
 
 	}
 	/**
