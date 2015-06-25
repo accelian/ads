@@ -1,8 +1,6 @@
 package gov.gsa.ads
 
-import gov.gsa.ads.graph.Link
-import gov.gsa.ads.graph.Node
-import grails.converters.JSON
+import com.google.gson.Gson
 /**
  * Controller to handle all in coming requests for drug event data
  * @author Matt
@@ -26,7 +24,8 @@ class DrugEventController  {
 	def graph() {
 		def events = drugService.getDrugEventsForDateRange(params.from, params.to, 100) //yyyyMMdd
 		def graph = drugService.convertEventsToNodesLinksArray(events)
-	
-		render graph as JSON
+		
+		Gson gson = new Gson()
+		render gson.toJson(graph)
 	}
 }

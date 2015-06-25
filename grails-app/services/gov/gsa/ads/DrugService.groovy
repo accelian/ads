@@ -2,7 +2,6 @@ package gov.gsa.ads
 
 import gov.gsa.ads.graph.Link
 import gov.gsa.ads.graph.Node
-import grails.converters.JSON
 import grails.transaction.Transactional
 
 
@@ -97,6 +96,7 @@ class DrugService {
 			}
 
 		}
+
 		def graph = [:]
 		graph.put("links", links)
 		graph.put("nodes", nodes)
