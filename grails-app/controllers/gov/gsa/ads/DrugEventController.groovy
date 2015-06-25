@@ -15,7 +15,7 @@ class DrugEventController {
 	 * 
 	 */
     def index() { 
-
+		
 	}
 	/**
 	 * Called by D3 force graph on page load to get the data for request
@@ -25,6 +25,6 @@ class DrugEventController {
 		def events = drugService.getDrugEventsForDateRange("20140101", "20150619", 100) //yyyyMMdd
 		def graph = drugService.convertEventsToNodesLinksArray(events)
 	
-		render graph as JSON
+		new JSON(graph)
 	}
 }
