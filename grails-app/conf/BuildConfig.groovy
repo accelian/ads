@@ -41,6 +41,9 @@ grails.project.dependency.resolution = {
         grailsCentral()
         mavenCentral()
         // uncomment these (or add new ones) to enable remote dependency resolution from public Maven repositories
+//        mavenRepo "https://maven.atlassian.com/repository/public/"
+//		mavenRepo "https://maven.atlassian.com/content/repositories/atlassian-public-snapshot/"
+//		mavenRepo "https://maven.atlassian.com/content/repositories/atlassian-central-snapshot/"
     }
 
     dependencies {
