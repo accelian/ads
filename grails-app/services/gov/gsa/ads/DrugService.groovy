@@ -30,9 +30,12 @@ class DrugService {
 		data.results.each{event ->
 			//convert to domain object for easier manipulation
 			DrugEvent drugEvent = new DrugEvent(eventId: event.safetyreportid,
-												receiveDate:event.receivedate, 
+												receiveDate:event.receivedate,
+												age: event.patient.patientonsetage, 
+												gender: (event.patient.patientsex == "1")?"Male":"Female",
 												//for the purpose of this proto-type, we're only going to use the first drug
-												drug:event.patient.drug.medicinalproduct.get(0))
+												drug:event.patient.drug.medicinalproduct.get(0),
+												reactions: event.patient.reaction.reactionmeddrapt)
 			results.add(drugEvent)
 	
 		}

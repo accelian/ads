@@ -25,7 +25,7 @@ var to = d.getFullYear() +
     (month<10 ? '0' : '') + month +
     (day<10 ? '0' : '') + day;
 
-var from = (d.getFullYear()-1)+
+var from = (d.getFullYear()-2)+
 (month<10 ? '0' : '') + month +
 (day<10 ? '0' : '') + day;
 
