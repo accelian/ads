@@ -68,6 +68,7 @@ grails.project.dependency.resolution = {
 		compile ":d3:3.4.8.0"
 		compile ":code-coverage:2.0.3-3"
 		
+		
 
         // plugins needed at runtime but not for compilation
         runtime ":jquery:1.11.1"
