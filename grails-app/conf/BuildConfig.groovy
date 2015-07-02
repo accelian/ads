@@ -66,7 +66,9 @@ grails.project.dependency.resolution = {
 		compile ":twitter-bootstrap:3.3.4"
 		compile ":spring-mobile:1.1.3"
 		compile ":d3:3.4.8.0"
-		compile ":code-coverage:2.0.3-3"
+		compile ":code-coverage:2.0.3-3" {
+			export = false  //plugin not needed for runtime
+		}
 		
 		
 
