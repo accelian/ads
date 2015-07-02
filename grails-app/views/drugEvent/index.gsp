@@ -5,7 +5,6 @@
 </head>
 <body>
 			<div id="page-wrapper">
-			CHANGE!!!
 				<div id="graph">
 					<asset:javascript src="d3.js" />
 					<asset:javascript src="drugEvent.js" />	
