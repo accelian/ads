@@ -41,9 +41,9 @@ grails.project.dependency.resolution = {
         grailsCentral()
         mavenCentral()
         // uncomment these (or add new ones) to enable remote dependency resolution from public Maven repositories
-        //mavenRepo "http://repository.codehaus.org"
-        //mavenRepo "http://download.java.net/maven/2/"
-        //mavenRepo "http://repository.jboss.com/maven2/"
+//        mavenRepo "https://maven.atlassian.com/repository/public/"
+//		mavenRepo "https://maven.atlassian.com/content/repositories/atlassian-public-snapshot/"
+//		mavenRepo "https://maven.atlassian.com/content/repositories/atlassian-central-snapshot/"
     }
 
     dependencies {
@@ -51,11 +51,13 @@ grails.project.dependency.resolution = {
         // runtime 'mysql:mysql-connector-java:5.1.29'
         // runtime 'org.postgresql:postgresql:9.3-1101-jdbc41'
         test "org.grails:grails-datastore-test-support:1.0.2-grails-2.4"
+//		compile 'com.atlassian.clover:clover:4.0.4' // com.cenqua.clover for Clover 3.x
     }
 
     plugins {
         // plugins for the build system only
         build ":tomcat:7.0.55.2" // or ":tomcat:8.0.20"
+		
 
         // plugins for the compile step
         compile ":scaffolding:2.1.2"
@@ -64,6 +66,7 @@ grails.project.dependency.resolution = {
 		compile ":twitter-bootstrap:3.3.4"
 		compile ":spring-mobile:1.1.3"
 		compile ":d3:3.4.8.0"
+		compile ":code-coverage:2.0.3-3"
 		
 
         // plugins needed at runtime but not for compilation
