@@ -69,8 +69,6 @@ grails.project.dependency.resolution = {
 		compile ":spring-mobile:1.1.3"
 		compile ":d3:3.4.8.0"
 		
-		
-
         // plugins needed at runtime but not for compilation
         runtime ":jquery:1.11.1"
 
