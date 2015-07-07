@@ -1,5 +1,7 @@
 The GSA Agile Delivery Services prototype can be accessed at: http://52.26.206.42/ads/
 
+Accelian, LLC is pleased to present the prototype for the GSA Agile Delivery Services request for proposal. We are selecting to participate in Pool 2 - Development. Thank you for your consideration.
+
 Agile Development Methodology – Iterative Approach:
 Using an  agile development approach, Accelian developed developed several iterations of code before 
 developing a minimum viable product (MVP). The MVP has now been released as a prototype for the GSA Agile Delivery Services 
