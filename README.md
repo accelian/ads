@@ -1,4 +1,4 @@
-The GSA Agile Delivery Services prototype can be accessed at: https://github.com/accelian/ads
+The GSA Agile Delivery Services prototype can be accessed at: http://52.26.206.42/ads/
 
 Agile Development Methodology – Iterative Approach:
 Using an  agile development approach, Accelian developed developed several iterations of code before 
